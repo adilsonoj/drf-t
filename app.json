@@ -1,0 +1,27 @@
+{
+    "name": "Start on Heroku: Python",
+    "description": "A Python app, deployed to Heroku.",
+    "image": "heroku/python",
+    "repository": "https://github.com/adilsonoj/drf-v-tst",
+    "keywords": [
+        "python",
+        "django"
+    ],
+    "addons": [
+        "heroku-postgresql"
+    ],
+    "env": {
+        "SECRET_KEY": {
+            "description": "k5&wr(rtqv%-4_@qmdik-d$-m5ye#n+-s+17)%4008$v%uq2f@",
+            "generator": "secret"
+        }
+    },
+    "environments": {
+        "test": {
+            "scripts": {
+                "test-setup": "python manage.py collectstatic --noinput",
+                "test": "python manage.py test"
+            }
+        }
+    }
+}

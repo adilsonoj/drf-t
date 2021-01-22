@@ -1,0 +1,4 @@
+.vscode
+blog/environment_settings.py
+staticfiles/
+venv/
