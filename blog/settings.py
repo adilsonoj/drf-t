@@ -12,7 +12,14 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 import django_heroku
-from blog.environment_settings import *
+
+
+try:
+    from blog.environment_settings import *
+except ImportError:
+    raise Exception(
+        "A environment_settings.py file is required to run this project")
+        
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
