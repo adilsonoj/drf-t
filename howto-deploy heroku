@@ -1,0 +1,36 @@
+1. Para usar PostgreSQL com heroku
+    Adicione um add on do PostgreSQL no projeto do heroku
+
+2. $ heroku login
+
+//comando na raiz do projeto para adicionar o remote do heroku
+3. $ heroku git:remote -a <nome projeto heroku>
+
+//fazer deploy
+4. git push heroku master
+
+
+//preparação do ambiente para heroku
+
+- instalar django-heroku
+    $ pip install django-heroku
+
+- adicionar em settings.py
+
+    import django_heroku
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    django_heroku.settings(locals()) //ultima linha
+
+- Arquivos necessarios em todo projeto python
+    .env
+    app.json
+    Procfile
+    requirements.txt
+    runtime.txt
+
+- Rodar migate no heroku   
+    $ heroku run python manage.py migrate
+
+
+- rodar projeto local com heroku
+    $ heroku local
