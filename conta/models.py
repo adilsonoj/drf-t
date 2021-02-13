@@ -22,4 +22,5 @@ class Client(models.Model):
 class Transaction(models.Model):
     value = models.DecimalField(max_digits=19, decimal_places=2, default=0.0)
     client = models.ForeignKey(Client, on_delete=models.DO_NOTHING)
+
    
