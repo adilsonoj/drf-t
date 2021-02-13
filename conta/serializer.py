@@ -12,6 +12,12 @@ class ClientSerializer(serializers.ModelSerializer):
         model = Client
         fields = '__all__'
 
+class ClientAccountSerializer(serializers.ModelSerializer):
+    account = AccountSerializer(read_only=True)
+    class Meta:
+        model = Client
+        fields = '__all__'
+
 
 class TransactionSerializer(serializers.ModelSerializer):
     class Meta:
@@ -20,7 +26,7 @@ class TransactionSerializer(serializers.ModelSerializer):
 
 
 class TransactionClientSerializer(serializers.ModelSerializer):
-     client = ClientSerializer(read_only=True)
+     client = ClientAccountSerializer(read_only=True)
      class Meta:
         model = Transaction
         fields = '__all__'
