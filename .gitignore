@@ -1,3 +1,6 @@
 .vscode
 staticfiles/
 venv/
+conta/__pycache__/
+*.pyc
+conta/__pycache__/models.cpython-38.pyc
